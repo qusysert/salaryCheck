@@ -103,7 +103,7 @@ function handleEnter(event) {
 document.getElementById("themeToggle").addEventListener("click", () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
     document.getElementById("themeToggle").innerHTML = isDark ?
         '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
 });
