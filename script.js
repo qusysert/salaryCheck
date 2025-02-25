@@ -34,12 +34,19 @@ const salaryRanges = [
 
 function calculatePercentile() {
     const salaryInput = document.getElementById("salaryInput");
-    const salary = parseFloat(salaryInput.value.replace(/\s/g, ''));
+    const rawValue = salaryInput.value.replace(/\s/g, '');
+    const salary = parseFloat(rawValue);
 
     if (!salary || salary <= 0) {
         document.getElementById("resultText").textContent = "Введите корректную зарплату!";
         document.getElementById("progress").style.width = '0%';
         document.getElementById("emojiContainer").innerHTML = '';
+
+        // Добавляем анимацию shake и подсвечиваем поле ввода
+        salaryInput.classList.add("error", "shake");
+        setTimeout(() => {
+            salaryInput.classList.remove("shake");
+        }, 300);
         return;
     }
 
@@ -71,12 +78,12 @@ function calculatePercentile() {
         emoji = '👶';
     }
 
-    document.getElementById("resultText").textContent = `Вы находитесь в ${percentile.toFixed(2)}% лучших по зарплате в России.`;
+    document.getElementById("resultText").textContent = `Вы зарабатываете больше чем ${percentile.toFixed(2)}% жителей России.`;
     document.getElementById("progress").style.width = `${progressWidth}%`;
 
-    // Применяем анимацию bounce для контейнера эмодзи
+    // Применяем анимацию bounce для эмодзи
     const emojiContainer = document.getElementById("emojiContainer");
-    emojiContainer.innerHTML = `${emoji}`;
+    emojiContainer.innerHTML = emoji;
     emojiContainer.classList.remove("bounce-animation");
     void emojiContainer.offsetWidth; // Перезапуск анимации
     emojiContainer.classList.add("bounce-animation");
@@ -88,3 +95,14 @@ function formatInput() {
     value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     input.value = value;
 }
+
+// Переключение темы (тёмная/светлая)
+document.getElementById("toggleTheme").addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+    // Обновляем текст кнопки в зависимости от текущей темы
+    if (document.body.classList.contains("dark")) {
+        this.textContent = "Светлая тема";
+    } else {
+        this.textContent = "Тёмная тема";
+    }
+});
