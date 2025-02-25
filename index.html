@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Ваш уровень крутости по зарплате</title>
+    <!-- Подключение шрифта Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>📊 Ваш уровень крутости по зарплате</h1>
+    <div class="input-container">
+        <label for="salaryInput">Введите вашу зарплату в рублях:</label>
+        <input type="text" id="salaryInput" placeholder="Введите сумму..." oninput="formatInput()">
+        <button onclick="calculatePercentile()">Рассчитать</button>
+    </div>
+    <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+    <div class="result">
+        <p id="resultText">Здесь будет ваш результат</p>
+    </div>
+    <div id="emojiContainer" class="emoji-container"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

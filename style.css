@@ -1,0 +1,130 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Светлый фон с мягким градиентом */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Основной контейнер */
+.container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовок */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+/* Стилизация контейнера ввода */
+.input-container {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+}
+
+/* Поле ввода */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border: 1px solid #888;
+}
+
+/* Кнопка */
+button {
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(162, 196, 253, 0.5);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Прогресс-бар */
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+    /* Прогресс-бар */
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
