@@ -1,11 +1,9 @@
-/* Сброс стилей */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Светлый фон с мягким градиентом */
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
@@ -17,19 +15,17 @@ body {
     padding: 20px;
 }
 
-/* Основной контейнер */
 .container {
     background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-    padding: 40px;
-    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 40px rgba(31, 38, 135, 0.1);
+    padding: 35px;
     width: 100%;
+    max-width: 600px;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Анимация появления */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -41,16 +37,12 @@ body {
     }
 }
 
-/* Заголовок */
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     color: #222;
 }
 
-/* Стилизация контейнера ввода */
 .input-container {
     margin-bottom: 30px;
 }
@@ -62,16 +54,14 @@ label {
     color: #555;
 }
 
-/* Поле ввода */
 input {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #ccc;
     background: #f9f9f9;
     color: #333;
-    text-align: center;
     margin-bottom: 15px;
     outline: none;
     transition: border 0.3s ease;
@@ -81,13 +71,12 @@ input:focus {
     border: 1px solid #888;
 }
 
-/* Кнопка */
 button {
     background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     color: #333;
-    padding: 12px 25px;
+    padding: 12px 30px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -103,16 +92,6 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Прогресс-бар */
-.progress-bar {
-    background: #e0e0e0;
-    border-radius: 10px;
-    height: 12px;
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-    /* Прогресс-бар */
 .progress-bar {
     background: #e0e0e0;
     border-radius: 10px;
@@ -127,4 +106,17 @@ button:active {
     width: 0%;
     transition: width 0.5s ease-in-out;
     border-radius: 10px;
+}
+
+.emoji-container {
+    font-size: 2rem;
+    margin-top: 15px;
+    color: #333;
+}
+
+.result p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    margin-top: 20px;
 }

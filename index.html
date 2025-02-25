@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Ваш уровень крутости по зарплате</title>
+    <title>🚀 Уровень по зарплате</title>
     <!-- Подключение шрифта Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <h1>📊 Ваш уровень крутости по зарплате</h1>
+    <h1>🚀 Уровень по зарплате</h1>
     <div class="input-container">
-        <label for="salaryInput">Введите вашу зарплату в рублях:</label>
+        <label for="salaryInput">Зарплата в ₽:</label>
         <input type="text" id="salaryInput" placeholder="Введите сумму..." oninput="formatInput()">
-        <button onclick="calculatePercentile()">Рассчитать</button>
+        <button onclick="calculatePercentile()">Посчитать</button>
     </div>
     <div class="progress-bar">
         <div id="progress" class="progress"></div>

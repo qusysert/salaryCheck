@@ -76,7 +76,7 @@ function calculatePercentile() {
 
     // Применяем анимацию bounce для контейнера эмодзи
     const emojiContainer = document.getElementById("emojiContainer");
-    emojiContainer.innerHTML = `Уровень крутости: ${emoji}`;
+    emojiContainer.innerHTML = `${emoji}`;
     emojiContainer.classList.remove("bounce-animation");
     void emojiContainer.offsetWidth; // Перезапуск анимации
     emojiContainer.classList.add("bounce-animation");
