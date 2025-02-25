@@ -1,28 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Больше чем у ❓процентове</title>
-    <!-- Подключение шрифта Inter -->
+    <title>💰 Сравнение зарплат | Россия</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <h1>Больше чем у ❓процентов</h1>
-    <div class="input-container">
-        <input type="text" id="salaryInput" placeholder="Введите зарплату в рублях..." oninput="formatInput()">
-        <button onclick="calculatePercentile()">Узнать!</button>
+    <div class="header">
+        <h1>💰 Сравнение зарплат</h1>
+        <button id="themeToggle" class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
-    <div class="progress-bar">
-        <div id="progress" class="progress"></div>
+
+    <div class="input-group">
+        <div class="input-container">
+            <input type="text" id="salaryInput" placeholder="Введите вашу зарплату..."
+                   oninput="formatInput()" onkeypress="handleEnter(event)">
+            <span class="currency">₽/мес</span>
+        </div>
+        <button class="calculate-btn" onclick="calculatePercentile()">
+            <span>Проверить</span>
+            <div class="ripple"></div>
+        </button>
     </div>
-    <div class="result">
-        <p id="resultText">Здесь будет результат</p>
+
+    <div class="progress-container">
+        <div class="progress-labels">
+            <span>0%</span>
+            <span>100%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
     </div>
-    <div id="emojiContainer" class="emoji-container"></div>
+
+    <div class="result-card">
+        <p id="resultText">Введите вашу зарплату для анализа</p>
+        <div id="emojiContainer" class="emoji-container"></div>
+    </div>
+
+    <div class="stats">
+        <a href="https://rosstat.gov.ru/compendium/document/13268" target="_blank" rel="noopener noreferrer">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span id="totalPeople">~28 млн</span>
+            </div>
+        </a>
+        <a href="https://rosstat.gov.ru/compendium/document/13268" target="_blank" rel="noopener noreferrer">
+            <div class="stat-item">
+                <i class="fas fa-database"></i>
+                <span>2024</span>
+            </div>
+        </a>
+    </div>
+
 </div>
+
+<div class="confetti-container" id="confetti"></div>
 <script src="script.js"></script>
 </body>
 </html>

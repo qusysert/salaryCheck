@@ -95,14 +95,36 @@ function formatInput() {
     value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     input.value = value;
 }
+function handleEnter(event) {
+    if (event.key === "Enter") calculatePercentile();
+}
 
-// Переключение темы (тёмная/светлая)
-document.getElementById("toggleTheme").addEventListener("click", function() {
-    document.body.classList.toggle("dark");
-    // Обновляем текст кнопки в зависимости от текущей темы
-    if (document.body.classList.contains("dark")) {
-        this.textContent = "Светлая тема";
-    } else {
-        this.textContent = "Тёмная тема";
-    }
+// Theme Toggle
+document.getElementById("themeToggle").addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    document.getElementById("themeToggle").innerHTML = isDark ?
+        '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+});
+
+function createRipple(event) {
+    const btn = event.currentTarget;
+    const ripple = document.createElement("div");
+    ripple.className = "ripple";
+    ripple.style.left = `${event.clientX - btn.offsetLeft}px`;
+    ripple.style.top = `${event.clientY - btn.offsetTop}px`;
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+}
+
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.getElementById("themeToggle").innerHTML = savedTheme === 'dark' ?
+    '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+// Add ripple effect to all buttons
+document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', createRipple);
 });
